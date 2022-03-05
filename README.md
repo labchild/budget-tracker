@@ -36,14 +36,17 @@ To install the PWA to your phone, follow the instructions for your platform:
 ## Usage
 Simply add relevent informatino to the appropriate inputs at the top of the page. Then click either the 'Add Funds' or 'Subtract Funds' button, depending if your transaction is a withdrawal/purchase or deposit. The graph and list of transaction will update!
 
-**In Browser**
+**In Browser:**
+
 ![budget in browser](/public/images/budget-tracker-preview.png)
 
-**Mobile PWA**
-![budget from homescreen](/public/images/budget-tracker-mobile-preview.PNG)
+**Mobile PWA:**
+
+<img src="/public/images/budget-tracker-mobile-preview.PNG" alt="budget from homescreen" width="40%">
 
 ## License
 ![license](https://img.shields.io/github/license/labchild/budget-tracker)
+
 This is an open source project and falls under the ISC license.
 
 ## Questions and Contact
