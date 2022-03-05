@@ -15,7 +15,7 @@ request.onsuccess = function (e) {
 
     if (navigator.onLine) {
         // send any idb data to server
-        // uploadBudget();
+        uploadBudget();
     }
 };
 
