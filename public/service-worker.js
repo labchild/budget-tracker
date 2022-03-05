@@ -8,10 +8,10 @@ const FILES_TO_CACHE = [
 ];
 
 // respond with cached resources
-self.addEventListener('fetch', function(e) {
+self.addEventListener('fetch', function (e) {
     console.log('fetch request: ' + e.request.url);
     e.respondWith(
-        caches.match(e.request).then(function(request) {
+        caches.match(e.request).then(function (request) {
             // if cache is available, respond with cached assets
             if (request) {
                 console.log('responding with cache: ' + e.request.url);
@@ -23,4 +23,33 @@ self.addEventListener('fetch', function(e) {
             }
         })
     )
-})
+});
+
+// cahche resources
+self.addEventListener('install', function (e) {
+    e.waitUntil(
+        caches.open(CACHE_NAME).then(function (cache) {
+            console.log('installing cache: ' + CACHE_NAME);
+            return cache.addAll(FILES_TO_CACHE);
+        })
+    )
+});
+
+// deleted outdated cached resources
+self.addEventListener('activate', function (e) {
+    e.waitUntil(
+        caches.keys().then(function (keyList) {
+            // filter out keys with this app prefix to create keep list
+            let cacheKeepList = keyList.filter(function (key) {
+                return key.indexOf(APP_PREFIX);
+            });
+            cacheKeepList.push(CACHE_NAME);
+
+            return Promise.all(keyList.map(function (key, i) {
+                if (cacheKeepList.indexOf(key) === -1) {
+                    console.log('deleting cache: ' + keyList[i])
+                }
+            }));
+        })
+    )
+});
