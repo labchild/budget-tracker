@@ -42,7 +42,8 @@ Simply add relevent informatino to the appropriate inputs at the top of the page
 **Mobile PWA**
 ![budget from homescreen](/public/images/budget-tracker-mobile-preview.PNG)
 
-## License ![license](https://img.shields.io/github/license/labchild/budget-tracker)
+## License
+![license](https://img.shields.io/github/license/labchild/budget-tracker)
 This is an open source project and falls under the ISC license.
 
 ## Questions and Contact
